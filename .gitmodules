@@ -1,0 +1,3 @@
+[submodule "autoload/dein/repos/github.com/Shougo/dein.vim"]
+	path = autoload/dein/repos/github.com/Shougo/dein.vim
+	url = https://github.com/Alanwatts42/neovim-config.git
