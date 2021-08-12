@@ -118,6 +118,9 @@ set wildignore+=*/.git*,*.tar,*.zip
 set wildmenu
 set wildmode=longest:full,list:full
 "----------------------------------------
+" Set Text Encoding to UTF-8 
+set encoding=utf-8
+"----------------------------------------
 " Set <Leader> key to Comma ','
 let g:mapleader=','
 "----------------------------------------
@@ -137,7 +140,7 @@ nnoremap <Leader>d "_d
 xnoremap <Leader>d "_d
 xnoremap <Leader>p "_dP
 "---------------------------------------
-" Search Options
+" Find/Search Options
 set incsearch                   " searches as you type
 set matchtime=2                 " time to blink match {}
 set matchpairs+=<:>             " for ci< or ci>
@@ -149,11 +152,11 @@ vnoremap <Leader>rc y:$s/<C-r>"/
 " Screen-Splitting
 set splitbelow                  " splits go below w/focus
 set splitright                  " vsplits go right w/focus
-" Easier Navigating Between Screens
-map <a-j> <c-w>j
-map <a-k> <c-w>k
-map <a-l> <c-w>l
-map <a-h> <c-w>h
+" Switching between screen-splits
+omap <a-j> <c-w>j
+omap <a-k> <c-w>k
+omap <a-l> <c-w>l
+omap <a-h> <c-w>h
 "------------------------------------
 " Ctrl+E = Go to EOL in Insert Mode
 inoremap <C-e> <C-o>$
@@ -164,9 +167,9 @@ set linebreak                   " don't cut words on wrap
 set listchars=tab:>\            " > to highlight <Tab>
 set nolist                      " displaying listchars
 set ww=<,>,h,l                  " ww=[commands that wrap around EOL]
-"---------------------
+"-------------------
 " Text/Code Folding
-"---------------------
+"-------------------
 " set folding to manual - press <F9> to fold selected text
 set foldmethod=manual
 set foldopen=all
@@ -243,8 +246,9 @@ nnoremap <leader>p :!bpython3 %<cr>
 nnoremap <leader>h :w<cr>:!sudo chmod +x %<cr>
 " Execute Shell Scripts with <leader>e
 nnoremap <leader>e :w<cr>:!./%<cr>
-"----------------------------------------
-" Use Templates for *.sh and *.py files
+"-----------
+" Templates
+"-----------
 if has("autocmd")
   augroup templates
     autocmd BufNewFile *.sh 0r /home/evan/.config/nvim/templates/template.sh
