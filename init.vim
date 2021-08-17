@@ -41,24 +41,21 @@ endif
 " Auto-complete-----------------------------
 call dein#add('Shougo/neosnippet-snippets')
 call dein#add('Shougo/neosnippet.vim')
-call dein#add('Shougo/neoinclude')
-call dein#add('prabirshrestha/asyncomplete.vim')
-call dein#add('prabirshrestha/asyncomplete.vim')
+" call dein#add('prabirshrestha/asyncomplete.vim')
 call dein#add('prabirshrestha/vim-lsp')
-call dein#add('prabirshrestha/asyncomplete-lsp.vim')
+" call dein#add('prabirshrestha/asyncomplete-lsp.vim')
 " Coding/Programming -------------------------------
-call dein#add('tpope/vim-surround')           " easy '[ ( 'surround' ) ]'
-call dein#add('tpope/vim-commentary')         " easy comments
-call dein#add('tomtom/tcomment_vim')          " <v><select>gcc comment selected text
-call dein#add('somini/vim-autoclose')         " easy [](){}, etc.
-call dein#add('FooSoft/vim-argwrap')          " <leader>a to change arg-wrap style
-call dein#add('scrooloose/syntastic')         " syntax highlighting
+call dein#add('tpope/vim-surround')     " easy '[ ( 'surround' ) ]'
+call dein#add('tpope/vim-commentary')   " easy comments
+call dein#add('tomtom/tcomment_vim')    " <v><select>gcc comment selected text
+call dein#add('somini/vim-autoclose')   " easy [](){}, etc.
+call dein#add('FooSoft/vim-argwrap')    " <leader>a to change arg-wrap style
+call dein#add('scrooloose/syntastic')   " syntax highlighting
 " Python Virtual Environments --------------
 call dein#add('jmcantrell/vim-virtualenv')
 call dein#add('PieterjanMontens/vim-pipenv')
 " Web Development --------------------------
 call dein#add('mattn/emmet-vim')
-call dein#add('prabirshrestha/vim-lsp')
 call dein#add('prabirshrestha/asyncomplete-lsp.vim')
 call dein#add('Yggdroot/indentLine') 
 call dein#add('w0rp/ale')
@@ -72,7 +69,8 @@ call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
 " Vim Functionality----------------------------
 call dein#add('scrooloose/nerdtree')
-call dein#add('tpope/vim-eunuch') call dein#add('ctrlpvim/ctrlp.vim')
+call dein#add('tpope/vim-eunuch') 
+call dein#add('ctrlpvim/ctrlp.vim')
 call dein#add('easymotion/vim-easymotion') "
 " Git Version Control------------------------
 call dein#add('tpope/vim-fugitive')
@@ -230,6 +228,11 @@ endif
 "------------------------------------
 " Coding and IDE-style functionality
 "------------------------------------
+"
+" Limit Syntax Highlighting (fix lag)
+set synmaxcol=128
+syntax sync minlines=256
+"------------------------
 " Pipenv path
 let pipenv_venv_path = system('pipenv --venv')
 "------------------------------------------------------------
